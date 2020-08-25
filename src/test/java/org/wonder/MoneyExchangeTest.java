@@ -70,4 +70,27 @@ public class MoneyExchangeTest
         Money reduced = bank.reduce(Money.franc(2) , "USD");
         assertEquals(Money.dollar(1), reduced);
     }
+
+    @Test
+    public void testMixedAddition(){
+        Money fiveBucks = Money.dollar(5);
+        Money tenFrancs = Money.franc(10);
+        Bank bank = new Bank();
+        bank.addRate("CHF", "USD", 2);
+        Money reduced = bank.reduce(fiveBucks.plus(tenFrancs) , "USD");
+        assertEquals(Money.dollar(10), reduced);
+    }
+
+    @Test
+    public void testMixedAdditionWithSum(){
+        Money fiveBucks = Money.dollar(5);
+        Money tenFrancs = Money.franc(10);
+        Bank bank = new Bank();
+        bank.addRate("CHF", "USD", 2);
+        Money reduced = bank.reduce(fiveBucks.plus(tenFrancs).plus(tenFrancs) , "USD");
+        assertEquals(Money.dollar(15), reduced);
+
+        reduced = bank.reduce(fiveBucks.plus(tenFrancs.plus(tenFrancs)) , "USD");
+        assertEquals(Money.dollar(15), reduced);
+    }
 }
