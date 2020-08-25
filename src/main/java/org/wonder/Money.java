@@ -9,8 +9,9 @@ public class Money {
     public boolean equals(Object o) {
         if(o == null) return false;
         if(!(o instanceof Money)) return false;
-        Money d = (Money) o;
-        return this.amount == d.amount;
+        Money money = (Money) o;
+        return this.getClass() == o.getClass() &&
+                this.amount == money.amount;
     }
 
     @Override
