@@ -6,6 +6,11 @@ public class Bank {
             Sum sum = (Sum)expression;
             return sum.reduce(currency);
         }
+
+        if(expression instanceof Money){
+            return (Money)expression;
+        }
+
         return null;
     }
 }
