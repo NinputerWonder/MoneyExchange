@@ -53,8 +53,10 @@ public class Money implements Expression {
         return new Sum(this, addend);
     }
 
-    @Override
-    public Money reduce(String currency) {
+    public Money reduce(String to) {
+        if(currency.equals("CHF") && to.equals("USD")){
+            return new Money(amount/2, to);
+        }
         return this;
     }
 }
