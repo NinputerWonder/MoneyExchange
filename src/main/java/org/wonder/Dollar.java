@@ -16,7 +16,9 @@ public class Dollar {
     @Override
     public boolean equals(Object o) {
         if(o == null) return false;
-        return o instanceof Dollar;
+        if(!(o instanceof Dollar)) return false;
+        Dollar d = (Dollar)o;
+        return this.amount == d.amount;
     }
 
     @Override

@@ -21,5 +21,6 @@ public class MoneyExchangeTest
     {
         Dollar five = new Dollar(5);
         assertEquals(new Dollar(5), five);
+        assertNotEquals(new Dollar(6), five);
     }
 }
