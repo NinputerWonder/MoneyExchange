@@ -49,8 +49,8 @@ public class Money implements Expression {
         return currency;
     }
 
-    public Expression plus(Money money) {
-        return null;
+    public Expression plus(Money addend) {
+        return new Sum(this, addend);
     }
 }
 

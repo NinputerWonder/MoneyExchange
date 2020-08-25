@@ -2,6 +2,10 @@ package org.wonder;
 
 public class Bank {
     public Money reduce(Expression expression , String currency) {
-        return Money.dollar(10);
+        if(expression instanceof Sum){
+            Sum sum = (Sum)expression;
+            return new Money(sum.getAugend().amount + sum.getAddend().amount, currency);
+        }
+        return null;
     }
 }
