@@ -93,4 +93,14 @@ public class MoneyExchangeTest
         reduced = bank.reduce(fiveBucks.plus(tenFrancs.plus(tenFrancs)) , "USD");
         assertEquals(Money.dollar(15), reduced);
     }
+
+    @Test
+    public void testMixedTimesWithSum(){
+        Money fiveBucks = Money.dollar(5);
+        Money tenFrancs = Money.franc(10);
+        Bank bank = new Bank();
+        bank.addRate("CHF", "USD", 2);
+        Money reduced = bank.reduce(fiveBucks.plus(tenFrancs).times(2) , "USD");
+        assertEquals(Money.dollar(20), reduced);
+    }
 }

@@ -41,8 +41,9 @@ public class Money implements Expression {
                 '}';
     }
 
-    public Money times(int times){
-        return new Money(amount * times, currency);
+    @Override
+    public Expression times(int multiplier){
+        return new Money(amount * multiplier, currency);
     }
 
     public String currency() {
