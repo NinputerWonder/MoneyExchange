@@ -2,22 +2,22 @@ package org.wonder;
 
 import java.util.Objects;
 
-public class Dollar {
+public class Franc {
     private int amount;
 
-    public Dollar(int amount) {
+    public Franc(int amount) {
         this.amount = amount;
     }
 
-    public Dollar times(int times) {
-        return new Dollar(this.amount * times);
+    public Franc times(int times) {
+        return new Franc(this.amount * times);
     }
 
     @Override
     public boolean equals(Object o) {
         if(o == null) return false;
-        if(!(o instanceof Dollar)) return false;
-        Dollar d = (Dollar)o;
+        if(!(o instanceof Franc)) return false;
+        Franc d = (Franc) o;
         return this.amount == d.amount;
     }
 
@@ -26,4 +26,3 @@ public class Dollar {
         return Objects.hash(amount);
     }
 }
-
