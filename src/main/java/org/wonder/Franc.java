@@ -2,17 +2,19 @@ package org.wonder;
 
 public class Franc extends Money {
 
-    public Franc(int amount) {
+    public Franc(int amount, String currency) {
         this.amount = amount;
+        this.currency = currency;
     }
 
+    @Override
     public Money times(int times) {
-        return new Franc(this.amount * times);
+        return Dollar.franc(amount * times);
     }
 
     @Override
     public String currency() {
-        return "CHF";
+        return currency;
     }
 }
 
