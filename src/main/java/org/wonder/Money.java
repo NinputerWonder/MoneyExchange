@@ -2,8 +2,12 @@ package org.wonder;
 
 import java.util.Objects;
 
-public class Money {
+public abstract class Money {
     protected int amount;
+
+    public static Money dollar(int amount) {
+        return new Dollar(amount);
+    }
 
     @Override
     public boolean equals(Object o) {
@@ -18,4 +22,6 @@ public class Money {
     public int hashCode() {
         return Objects.hash(amount);
     }
+
+    abstract public Money times(int times);
 }
