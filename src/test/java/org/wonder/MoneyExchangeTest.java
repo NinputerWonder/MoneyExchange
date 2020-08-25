@@ -19,16 +19,16 @@ public class MoneyExchangeTest
     {
         assertEquals(Money.dollar(5), Money.dollar(5));
         assertNotEquals(Money.dollar(6), Money.dollar(5));
-        assertEquals(new Franc(5), new Franc(5));
-        assertNotEquals(new Franc(6), new Franc(5));
-        assertNotEquals(new Franc(5), Money.dollar(5));
+        assertEquals(Money.franc(5), Money.franc(5));
+        assertNotEquals(Money.franc(6), Money.franc(5));
+        assertNotEquals(Money.franc(5), Money.dollar(5));
     }
 
     @Test
     public void testFrancMultiplication()
     {
-        Franc five = new Franc(5);
-        assertEquals(new Franc(10), five.times(2));
-        assertEquals(new Franc(15), five.times(3));
+        Money five = Money.franc(5);
+        assertEquals(Money.franc(10), five.times(2));
+        assertEquals(Money.franc(15), five.times(3));
     }
 }
