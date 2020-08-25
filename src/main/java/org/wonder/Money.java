@@ -2,7 +2,7 @@ package org.wonder;
 
 import java.util.Objects;
 
-public abstract class Money {
+public class Money {
     protected int amount;
     protected String currency;
 
@@ -33,7 +33,17 @@ public abstract class Money {
         return Objects.hash(amount);
     }
 
-    public abstract Money times(int times);
+    @Override
+    public String toString() {
+        return "Money{" +
+                "amount=" + amount +
+                ", currency='" + currency + '\'' +
+                '}';
+    }
+
+    public Money times(int times){
+        return null;
+    }
 
     public String currency() {
         return currency;

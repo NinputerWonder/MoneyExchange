@@ -2,11 +2,13 @@ package org.wonder;
 
 import static org.junit.Assert.*;
 
+import org.junit.Ignore;
 import org.junit.Test;
 
 public class MoneyExchangeTest
 {
     @Test
+    @Ignore
     public void testMultiplication()
     {
         Money five = Money.dollar(5);
