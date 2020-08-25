@@ -24,7 +24,7 @@ public class Money {
         if(o == null) return false;
         if(!(o instanceof Money)) return false;
         Money money = (Money) o;
-        return this.getClass() == o.getClass() &&
+        return this.currency.equals(money.currency) &&
                 this.amount == money.amount;
     }
 

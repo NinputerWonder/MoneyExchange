@@ -1,14 +1,13 @@
 package org.wonder;
 
-import static org.junit.Assert.*;
-
-import org.junit.Ignore;
 import org.junit.Test;
+
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotEquals;
 
 public class MoneyExchangeTest
 {
     @Test
-    @Ignore
     public void testMultiplication()
     {
         Money five = Money.dollar(5);
@@ -39,5 +38,11 @@ public class MoneyExchangeTest
     {
         assertEquals("USD", Money.dollar(1).currency());
         assertEquals("CHF", Money.franc(1).currency());
+    }
+
+    @Test
+    public void testDifferenceClassEquality()
+    {
+        assertEquals(new Money(5, "USD"), Money.dollar(5));
     }
 }
