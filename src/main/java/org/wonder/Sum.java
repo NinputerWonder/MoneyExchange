@@ -16,4 +16,8 @@ public class Sum implements Expression {
     public Money getAddend() {
         return addend;
     }
+
+    public Money reduce(String currency) {
+        return new Money(augend.amount + addend.amount, currency);
+    }
 }
