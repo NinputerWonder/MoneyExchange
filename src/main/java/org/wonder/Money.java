@@ -42,7 +42,7 @@ public class Money {
     }
 
     public Money times(int times){
-        return null;
+        return new Money(amount * times, currency);
     }
 
     public String currency() {
